@@ -159,7 +159,7 @@ namespace NEventStore.Persistence.MongoDB.Tests.AcceptanceTests
 		}
 
 		// Enable this test manually, it does not get skipped in the build server causing the build to fail
-		// [Fact(Skip = "Run it Manually")]
+		[Fact()]
 		public void should_correctly_deserialize_headers()
 		{
 			_persisted.Headers.Keys.ShouldContain("key.1");

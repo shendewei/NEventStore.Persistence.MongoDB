@@ -8,8 +8,7 @@ namespace NEventStore.Persistence.MongoDB.Tests
     public class AcceptanceTestMongoPersistenceFactory : MongoPersistenceFactory
     {
         private const string EnvVarConnectionStringKey = "NEventStore.MongoDB";
-        private const string EnvVarServerSideLoopKey = "NEventStore.MongoDB.ServerSideLoop";
-
+        
         public AcceptanceTestMongoPersistenceFactory(MongoPersistenceOptions options = null)
             : base(
                 GetConnectionString,
@@ -21,7 +20,7 @@ namespace NEventStore.Persistence.MongoDB.Tests
         internal static string GetConnectionString()
         {
             string connectionString = Environment.GetEnvironmentVariable(EnvVarConnectionStringKey, EnvironmentVariableTarget.Process);
-
+           
             if (connectionString == null)
             {
                 string message = string.Format(
